@@ -118,7 +118,7 @@
       if (value.length > 420000) value = canvas.toDataURL('image/jpeg', .45);
       if (!C.isPhoto(value)) throw new Error('图片压缩后仍过大，请换一张较小的图片。');
       if (token === uploadToken && $('#publish-form')) { photo = value; updatePhoto(); saveDraft(); }
-    } catch (error) { if (token === uploadToken && $('#error-photo')) $('#error-photo').textContent = error.message || '无法读取图片，请更换文件。'; }
+    } catch (error) { if (token === uploadToken && $('#error-photo')) $('#error-photo').textContent = error instanceof DOMException ? '无法读取图片内容，请换一张完整的 JPG、PNG 或 WebP 图片。' : error.message || '无法读取图片，请更换文件。'; }
     finally { if (token === uploadToken) { uploading = false; if ($('#publish-submit')) $('#publish-submit').disabled = false; } }
   }
   function detail(id) {
@@ -209,6 +209,7 @@
   }
   function resetFilters() { filters = { keyword: '', type: 'all', category: '', area: '', status: 'active', sort: 'latest' }; if (location.hash !== '#home' && location.hash !== '') location.hash = 'home'; else home(); }
   document.addEventListener('click', event => {
+    if (event.target.closest('.skip-link')) { event.preventDefault(); main.focus(); main.scrollIntoView(); return; }
     const el = event.target.closest('button'); if (!el) return;
     if (el.dataset.type) { filters.type = el.dataset.type; home(); }
     if (el.dataset.mineStatus) { mineStatus = el.dataset.mineStatus; mine(); }

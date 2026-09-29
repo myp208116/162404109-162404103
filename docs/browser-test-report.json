@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-09-29T12:00:57.850Z",
+  "browser": "Google Chrome for Testing 154.0.8037.57",
+  "protocol": "file://",
+  "offline": true,
+  "viewport": "1440x1000 and 390x844",
+  "passed": 19,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "01 file:// 离线首页加载与 6 条进行中示例",
+      "result": "PASS"
+    },
+    {
+      "name": "02 任意关键词检索与返回保留结果",
+      "result": "PASS"
+    },
+    {
+      "name": "03 联系弹窗与复制成功反馈（剪贴板替身）",
+      "result": "PASS"
+    },
+    {
+      "name": "04 剪贴板拒绝时保留手动复制入口",
+      "result": "PASS"
+    },
+    {
+      "name": "05 分类、区域、类型组合筛选与空结果",
+      "result": "PASS"
+    },
+    {
+      "name": "06 空表阻止发布并定位错误",
+      "result": "PASS"
+    },
+    {
+      "name": "07 草稿跨路由和刷新恢复",
+      "result": "PASS"
+    },
+    {
+      "name": "08 图片压缩、预览、移除",
+      "result": "PASS"
+    },
+    {
+      "name": "09 完整发布寻物并清除草稿",
+      "result": "PASS"
+    },
+    {
+      "name": "10 完成确认可取消，确认后状态一致",
+      "result": "PASS"
+    },
+    {
+      "name": "11 完整招领流程与已归还",
+      "result": "PASS"
+    },
+    {
+      "name": "12 完成记录默认隐藏、全部状态可搜索",
+      "result": "PASS"
+    },
+    {
+      "name": "13 XSS 文本按原样展示且不执行",
+      "result": "PASS"
+    },
+    {
+      "name": "14 保存失败不跳成功页、不丢表单",
+      "result": "PASS"
+    },
+    {
+      "name": "15 无效详情路由有提示",
+      "result": "PASS"
+    },
+    {
+      "name": "16 390 px 首页及发布页无横向溢出",
+      "result": "PASS"
+    },
+    {
+      "name": "17 键盘跳转到主要内容保留当前路由",
+      "result": "PASS"
+    },
+    {
+      "name": "18 损坏存储重载后不被样例覆盖",
+      "result": "PASS"
+    },
+    {
+      "name": "19 浏览器无脚本异常、无外部网络请求",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "externalRequests": []
+}
