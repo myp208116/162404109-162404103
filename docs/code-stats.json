@@ -1,0 +1,37 @@
+{
+  "note": "Physical lines and UTF-8 bytes; not a measure of personal effort.",
+  "files": [
+    {
+      "file": "index.html",
+      "lines": 31,
+      "bytes": 1798
+    },
+    {
+      "file": "css/style.css",
+      "lines": 9,
+      "bytes": 19585
+    },
+    {
+      "file": "js/app.js",
+      "lines": 246,
+      "bytes": 30987
+    },
+    {
+      "file": "js/core.js",
+      "lines": 86,
+      "bytes": 6610
+    },
+    {
+      "file": "js/seed.js",
+      "lines": 22,
+      "bytes": 2410
+    },
+    {
+      "file": "js/store.js",
+      "lines": 51,
+      "bytes": 2789
+    }
+  ],
+  "totalLines": 445,
+  "totalBytes": 64179
+}
