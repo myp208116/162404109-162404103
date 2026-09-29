@@ -32,7 +32,7 @@
     const errors = {};
     for (const key of ['type', 'title', 'category', 'area', 'location', 'eventDate', 'description', 'contactType', 'contact', 'nickname']) data[key] = clean(x[key]);
     data.photo = typeof x.photo === 'string' ? x.photo : '';
-    if (!STATUS[data.type]) errors.type = '请选择寻物或招领。';
+    if (!Object.hasOwn(STATUS, data.type)) errors.type = '请选择寻物或招领。';
     if (!data.title) errors.title = '请填写物品名称。';
     if (!CATEGORIES.includes(data.category)) errors.category = '请选择物品分类。';
     if (!AREAS.includes(data.area)) errors.area = '请选择所在区域。';

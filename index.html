@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#216b55">
+  <meta name="description" content="拾光校园失物招领：发布线索，找回校园里的小小牵挂。">
+  <title>拾光 · 校园失物招领</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/core.js"></script>
+  <script defer src="js/store.js"></script>
+  <script defer src="js/seed.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="拾光首页"><img src="assets/logo.svg" alt="" width="38" height="38"><span>拾光<small>校园失物招领</small></span></a>
+      <nav aria-label="主导航"><a href="#home" data-nav="home">失物招领</a><a href="#mine" data-nav="mine">我的发布</a><a href="#help" data-nav="help">使用指南</a></nav>
+      <a class="button primary header-publish" href="#publish"><span aria-hidden="true">＋</span> 发布信息</a>
+    </div>
+  </header>
+  <main id="main" tabindex="-1"><p class="loading">正在打开拾光…</p></main>
+  <footer class="site-footer"><span>拾光 · 让每一份失而复得，都有迹可循。</span><a href="#help">本地演示版 · 使用说明 ↗</a></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+  <noscript><p>请在 Chrome 中启用 JavaScript，以使用发布和搜索功能。</p></noscript>
+</body>
+</html>

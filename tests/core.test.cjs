@@ -45,3 +45,4 @@ test('35 损坏或恶意草稿不能注入字段和图片', () => { const m = me
 test('36 草稿写入与清除失败可被界面识别', () => { const bad = { setItem() { throw Error(); }, removeItem() { throw Error(); } }; assert.equal(S.saveDraft(bad, form()).ok, false); assert.equal(S.clearDraft(bad).ok, false); });
 test('37 存储记录校验拒绝缺失类型、状态或时间', () => { for (const change of [{ type: 'x' }, { status: 'x' }, { createdAt: 'bad' }, { demo: 'yes' }, { ownerId: '' }]) assert.equal(C.validPost({ ...post(), ...change }), false); });
 test('38 非对象输入返回校验错误而不抛异常', () => { assert.equal(C.validatePost(null).ok, false); assert.equal(C.validatePost('bad').ok, false); });
+test('39 原型链属性名不能绕过类型枚举', () => { for (const type of ['__proto__', 'constructor', 'toString']) assert.ok(C.validatePost(form({ type })).errors.type); });
