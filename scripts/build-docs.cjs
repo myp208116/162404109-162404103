@@ -44,7 +44,9 @@ const companion = original
   .replace('| 搭档 GitHub | [popochus](https://github.com/popochus) |', '| 搭档 GitHub | [myp208116](https://github.com/myp208116) |')
   .replace('杜玉鹤的总结建议围绕“从预设页面到真实校验和持久化”：说明本人读懂或修改的函数、一次独立复测的发现，以及下一次如何提前安排异常路径测试。', '蔡信坡的总结建议围绕“从点通页面到可复现测试”：说明本人独立检查的用户路径、fork 中完成的实际改进、PR 互审反馈，以及下一次如何设计更有效的异常用例。')
   .replace('**评价蔡信坡待本人填写：**', '**评价杜玉鹤待本人填写：**');
-fs.writeFileSync(path.join(root, 'docs/博客_蔡信坡.md'), companion);
+const companionPath = path.join(root, 'docs/博客_蔡信坡.md');
+// Rebuilding diagrams must preserve each student's later edits and individual PSP.
+if (!fs.existsSync(companionPath)) fs.writeFileSync(companionPath, companion);
 
 (async () => {
   const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');

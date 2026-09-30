@@ -67,7 +67,7 @@
     ├── 设计说明.md              # 原型承接、模型与流程图
     ├── 测试说明.md              # 测试工具、教程、用例和评估
     ├── 测试报告.md              # 实际执行结果与局限
-    ├── 结对与PSP.md             # 建议分工及待填写的个人真实记录
+    ├── 结对与PSP.md             # 分工、实际 PSP 及结对记录
     ├── 博客_杜玉鹤.md           # 博客稿，含需本人补充的明确标记
     ├── 博客_蔡信坡.md           # 博客稿，含需本人补充的明确标记
     ├── 提交清单.md              # 仓库、fork、PR、博客、群表格
@@ -102,4 +102,4 @@ npm run test:coverage
 - [本次作业题目](https://edu.cnblogs.com/campus/fzu/202601SofwareEngineering/homework/16744)
 - [第一次墨刀原型](https://modao.cc/proto/lYgpHdtlyoamjXP1ive/sharing?view_mode=device&screen=rbpVWJJ5GAyNcXv3k&canvasId=rcVWJJ5GB7QSMTwy)
 
-本次材料由助手根据用户提供的第一版原型辅助实现与验证。本地提交记录反映实际实现顺序，不代表两名同学已经完成 fork、PR 和互审。两人应阅读代码、复测并补齐真实协作记录、个人 PSP、博客链接及群表格；详见 [提交清单](docs/提交清单.md)。
+本次材料由助手根据用户提供的第一版原型辅助实现与验证。本地提交记录反映实际实现顺序，不代表两名同学已经完成 fork、PR 和互审。两人应阅读代码、复测并核对已补齐的实际 PSP，并补齐真实协作记录、博客链接及群表格；详见 [提交清单](docs/提交清单.md)。
