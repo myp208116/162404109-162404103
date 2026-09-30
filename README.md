@@ -68,8 +68,9 @@
     ├── 测试说明.md              # 测试工具、教程、用例和评估
     ├── 测试报告.md              # 实际执行结果与局限
     ├── 结对与PSP.md             # 分工、实际 PSP 及结对记录
-    ├── 博客_杜玉鹤.md           # 第一人称实现报告，含分工与互评拟稿
-    ├── 博客_蔡信坡.md           # 第一人称检索与测试报告，含分工与互评拟稿
+    ├── 博客_杜玉鹤.md           # 正式博客：实现、PSP、分工与互评
+    ├── 博客_蔡信坡.md           # 正式博客：检索、测试、分工与互评
+    ├── 蔡信坡_Fork与PR操作.md   # 搭档独立完成仓库协作的具体步骤
     ├── 提交清单.md              # 仓库、fork、PR、博客、群表格
     ├── unit-test-output.txt     # 实际测试与覆盖率输出
     └── images/                  # 实机截图与流程图
@@ -102,4 +103,4 @@ npm run test:coverage
 - [本次作业题目](https://edu.cnblogs.com/campus/fzu/202601SofwareEngineering/homework/16744)
 - [第一次墨刀原型](https://modao.cc/proto/lYgpHdtlyoamjXP1ive/sharing?view_mode=device&screen=rbpVWJJ5GAyNcXv3k&canvasId=rcVWJJ5GB7QSMTwy)
 
-本次材料由助手根据用户提供的第一版原型辅助实现与验证。本地提交记录反映实际实现顺序，不代表两名同学已经完成 fork、PR 和互审。两份博客已写成不同侧重点的第一人称完整稿，分工、协作反思与双方互评为代拟文字，发布前按实际情况核对。个人博客主页的占位项已按用户要求移除；实际 PSP、协作操作和发布步骤见 [提交清单](docs/提交清单.md)。
+本次材料由助手根据用户提供的第一版原型辅助实现与验证，两份博客已整理为正式文章。主仓库与提交记录已建立；截至 2026 年 9 月 30 日本次核对，尚未查到 `popochus` 的同名 fork，主仓库 PR 数量为 0。蔡信坡将自行完成这部分协作，具体步骤见 [Fork 与 PR 操作说明](docs/蔡信坡_Fork与PR操作.md)，其余发布事项见 [提交清单](docs/提交清单.md)。

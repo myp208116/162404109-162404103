@@ -1,0 +1,23 @@
+{
+  "checked_date": "2026-09-30",
+  "timezone": "Asia/Shanghai",
+  "main_repository": {
+    "full_name": "myp208116/162404109-162404103",
+    "url": "https://github.com/myp208116/162404109-162404103",
+    "exists": true,
+    "is_fork": false,
+    "api_status": 200
+  },
+  "companion_repository": {
+    "full_name": "popochus/162404109-162404103",
+    "public_lookup_status": 404,
+    "verified_fork": false
+  },
+  "pull_requests": {
+    "query_state": "all",
+    "api_status": 200,
+    "count": 0
+  },
+  "next_action": "蔡信坡按操作说明自行完成 fork、实际改进与 PR。",
+  "evidence_scope": "本次 GitHub API 查询的状态快照；后续操作完成后需重新核对。"
+}
