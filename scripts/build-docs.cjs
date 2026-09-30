@@ -36,17 +36,7 @@ data += arrow('M829 300V354H368V418') + arrow('M829 354H708V418') + arrow('M829 
 data += text(45, 622, '保存失败：保持输入和原状态；数据损坏：保留原始记录并明确提示。', 18, '#68806d');
 fs.writeFileSync(path.join(out, '11-dataflow.svg'), svg(1335, 670, data));
 
-const original = fs.readFileSync(path.join(root, 'docs/博客_杜玉鹤.md'), 'utf8');
-const companion = original
-  .replace('| 姓名与学号 | 杜玉鹤 162404109 |', '| 姓名与学号 | 蔡信坡 162404103 |')
-  .replace('| 结对同学 | 蔡信坡 162404103 |', '| 结对同学 | 杜玉鹤 162404109 |')
-  .replace('**待补：蔡信坡的博客园个人主页或本次文章链接**', '**待补：杜玉鹤的博客园个人主页或本次文章链接**')
-  .replace('| 搭档 GitHub | [popochus](https://github.com/popochus) |', '| 搭档 GitHub | [myp208116](https://github.com/myp208116) |')
-  .replace('杜玉鹤的总结建议围绕“从预设页面到真实校验和持久化”：说明本人读懂或修改的函数、一次独立复测的发现，以及下一次如何提前安排异常路径测试。', '蔡信坡的总结建议围绕“从点通页面到可复现测试”：说明本人独立检查的用户路径、fork 中完成的实际改进、PR 互审反馈，以及下一次如何设计更有效的异常用例。')
-  .replace('**评价蔡信坡待本人填写：**', '**评价杜玉鹤待本人填写：**');
-const companionPath = path.join(root, 'docs/博客_蔡信坡.md');
-// Rebuilding diagrams must preserve each student's later edits and individual PSP.
-if (!fs.existsSync(companionPath)) fs.writeFileSync(companionPath, companion);
+// The two blog posts are maintained independently; this script only builds diagrams.
 
 (async () => {
   const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
@@ -59,5 +49,5 @@ if (!fs.existsSync(companionPath)) fs.writeFileSync(companionPath, companion);
       await page.screenshot({ path: path.join(out, name + '.png') });
     }
   } finally { await browser.close(); }
-  console.log('Created workflow / data-flow diagrams and companion blog draft.');
+  console.log('Created workflow / data-flow diagrams.');
 })().catch(e => { console.error(e.message); process.exitCode = 1; });
