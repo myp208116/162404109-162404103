@@ -211,7 +211,17 @@
   document.addEventListener('click', event => {
     if (event.target.closest('.skip-link')) { event.preventDefault(); main.focus(); main.scrollIntoView(); return; }
     const el = event.target.closest('button'); if (!el) return;
-    if (el.dataset.type) { filters.type = el.dataset.type; home(); }
+    /* Update the segmented buttons and the result list only, so a keyword typed but not yet
+       submitted in the search box is not wiped out by a full re-render of the home page. */
+    if (el.dataset.type) {
+      filters.type = el.dataset.type;
+      document.querySelectorAll('.segmented[aria-label="信息类型"] button').forEach(b => {
+        const active = b.dataset.type === filters.type;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', String(active));
+      });
+      renderResults();
+    }
     if (el.dataset.mineStatus) { mineStatus = el.dataset.mineStatus; mine(); }
     if (el.dataset.contact) contact(el.dataset.contact);
     if (el.dataset.complete) confirmComplete(el.dataset.complete);
