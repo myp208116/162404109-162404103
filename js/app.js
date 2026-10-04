@@ -21,7 +21,12 @@
   const initial = S.load(storage, window.ShiguangSeed(), `owner-${crypto.randomUUID()}`);
   let state = initial.state, failure = initial.error || '';
   let filters = { keyword: '', type: 'all', category: '', area: '', status: 'active', sort: 'latest' };
-  let mineStatus = 'all', lastList = 'home', toastTimer, photo = '', uploadToken = 0, uploading = false;
+  /* Remember which list page opened the detail view, so the back link survives a reload. */
+  const listMemory = {
+    read() { try { return sessionStorage.getItem('shiguang:lastList') || 'home'; } catch { return 'home'; } },
+    write(value) { try { sessionStorage.setItem('shiguang:lastList', value); } catch { /* A non-persistent session is fine. */ } }
+  };
+  let mineStatus = 'all', lastList = listMemory.read(), toastTimer, photo = '', uploadToken = 0, uploading = false;
   let draft = S.loadDraft(storage), lastFocus = null;
   function toast(message) {
     const t = $('#toast'); t.textContent = message; t.hidden = false;
@@ -47,7 +52,7 @@
     return `<div class="empty-state"><img src="assets/box.svg" alt=""><h2>${title}</h2><p>${description}</p>${my ? '' : '<button class="button" data-action="reset">清空筛选</button>'}<a class="button primary" href="#publish">发布一条信息</a></div>`;
   }
   function home() {
-    lastList = 'home';
+    lastList = 'home'; listMemory.write('home');
     const active = state.posts.filter(p => p.status === 'active').length;
     const done = state.posts.length - active;
     main.innerHTML = `<div class="container"><section class="hero"><div><span class="eyebrow">每一件小事，都值得被认真对待</span><h1>让失物，<br>回到<em>主人身边。</em></h1><p>校园里的小小牵挂，在这里有回应。</p><div class="hero-links"><a class="button primary" href="#publish/lost">我丢了东西 ${icon('arrow')}</a><a class="button" href="#publish/found">我捡到了东西</a></div></div><img class="hero-art" src="assets/hero.svg" alt="校园卡、雨伞与钥匙汇聚在失物招领信封中"></section>
@@ -64,7 +69,7 @@
     $('#results').innerHTML = posts.length ? `<div class="card-grid">${posts.map(p => card(p)).join('')}</div>` : empty('暂时没有找到相关信息', '试试更短的关键词或放宽分类、地点和状态，也可以留下你的寻物信息。');
   }
   function mine() {
-    lastList = 'mine';
+    lastList = 'mine'; listMemory.write('mine');
     const all = C.queryPosts(state.posts, { ownerId: state.ownerId });
     const counts = { all: all.length, active: all.filter(p => p.status === 'active').length, done: all.filter(p => p.status === 'done').length };
     const posts = C.queryPosts(all, { status: mineStatus });
