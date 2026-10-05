@@ -102,5 +102,3 @@ npm run test:coverage
 - [课程主页](https://edu.cnblogs.com/campus/fzu/202601SofwareEngineering/)
 - [本次作业题目](https://edu.cnblogs.com/campus/fzu/202601SofwareEngineering/homework/16744)
 - [第一次墨刀原型](https://modao.cc/proto/lYgpHdtlyoamjXP1ive/sharing?view_mode=device&screen=rbpVWJJ5GAyNcXv3k&canvasId=rcVWJJ5GB7QSMTwy)
-
-本次材料由助手根据用户提供的第一版原型辅助实现与验证，两份博客已整理为正式文章。主仓库与提交记录已建立；截至 2026 年 9 月 30 日本次核对，尚未查到 `popochus` 的同名 fork，主仓库 PR 数量为 0。蔡信坡将自行完成这部分协作，具体步骤见 [Fork 与 PR 操作说明](docs/蔡信坡_Fork与PR操作.md)，其余发布事项见 [提交清单](docs/提交清单.md)。
